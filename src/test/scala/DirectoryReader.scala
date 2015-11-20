@@ -1,8 +1,6 @@
 import java.io.File
 
-import scala.collection.JavaConversions._
 import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
 import scala.io._
 
 class DirectoryReader {
@@ -20,12 +18,9 @@ class DirectoryReader {
         val commandName = commandNamePattern.findFirstIn(file.getName()).get.tail.dropRight(1)
         val fileContents = Source.fromFile(file).getLines.mkString
         val entry = Map[String, String]("filename" -> file.getName, "command" -> commandName, "body" -> fileContents)
-        println(s"Command: ${commandName}")
-        println(s"Body: ${fileContents}")
         result+=entry
-        i = i +1
       }
     }
-    result
+    result.reverse
   }
 }

@@ -27,7 +27,5 @@ class FileBasedScenario extends Simulation {
       .pause(1 second)
   }
 
-
-
-  setUp(scn.inject(atOnceUsers(10)).protocols(httpConf))
+  setUp(scn.inject(atOnceUsers(1)).protocols(httpConf))
 }
