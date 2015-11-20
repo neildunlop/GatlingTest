@@ -1,5 +1,5 @@
-Gatling for Testing GTP
-=======================
+Gatling for Testing
+===================
 
 Execute a set of gatling tests with 'sbt test' on the command line.
 
